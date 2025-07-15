@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css link -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Tailwindcss style -->
+    <style type="text/tailwindcss">
+        @theme {
+        --color-primary: #FFF;
+        --color-secondary: #F40404;
+        --color-accent: #6C6C6C;
+    }
+    .scrolled-navbar {
+        background-color: rgba(244, 4, 4, 0.658); /* Red with opacity */
+        backdrop-filter: blur(10px);
+        animation: slideDown 0.4s ease-out forwards;
+        }
+    @keyframes slideDown {
+        0% {
+            top: -100px;
+            opacity: 0;
+        }
+        100% {
+            top: 0;
+            opacity: 1;
+        }
+    }
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- first navbar -->
+        <nav class="bg-[#282828] text-white pb-1">
+            <div class="max-w-screen-lg w-11/12 mx-auto flex justify-between items-center py-4">
+                <div class="sm:flex justify-start items-center space-x-4">
+                    <p>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <span>mail@yourcompany.com</span>
+                    </p>
+                    <p>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <span>+896 120 5889 (Toll free)</span>
+                    </p>
+                </div>
+                <div class="space-x-4">
+                    <span class="hover:text-secondary"><i class="fa-brands fa-facebook-f"></i></span>
+                    <span class="hover:text-secondary"><i class="fa-brands fa-twitter"></i></span>
+                    <span class="hover:text-secondary"><i class="fa-brands fa-linkedin-in"></i></span>
+                    <span class="hover:text-secondary"><i class="fa-brands fa-instagram"></i></span>
+                </div>
+            </div>
+            <div class="h-1 bg-[#FFB800]"></div>
+        </nav>
+        <!-- second navbar -->
+        <nav id="navbar" class="bg-secondary text-white ease-in-out duration-500">
+            <div class="relative sm:static max-w-screen-lg w-11/12 mx-auto flex justify-between items-center py-4">
+                <div><img src="images/Logo.png" alt=""></div>
+                <div id="mobileMenu" class="hidden sm:flex">
+                    <ul
+                        class="top-18 space-y-4 sm:space-y-0 left-0 bg-secondary sm:bg-transparent w-full p-7 px-20 sm:p-0 sm:left-0 sm:top-0 absolute z-1 sm:static block sm:flex sm:items-center sm:justify-end sm:space-x-6 text-base">
+                        <li class="text-lg group relative w-max">
+                            <a href="" id="home">Home</a>
+                            <span
+                                class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                            <span
+                                class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                        </li>
+                        <li class="text-lg group relative w-max">
+                            <a href="" id="home">About</a>
+                            <span
+                                class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                            <span
+                                class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                        </li>
+                        <li class="text-lg group relative w-max">
+                            <a href="" id="home">About</a>
+                            <span
+                                class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                            <span
+                                class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                        </li>
+                        <li class="text-lg group relative w-max">
+                            <a href="" id="home">Gallery</a>
+                            <span
+                                class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                            <span
+                                class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                        </li>
+                        <li class="text-lg group relative w-max">
+                            <a href="" id="home">Blog</a>
+                            <span
+                                class="absolute -bottom-1 left-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                            <span
+                                class="absolute -bottom-1 right-1/2 w-0 transition-all h-0.5 bg-white group-hover:w-3/6"></span>
+                        </li>
+                        <button
+                            class="py-2 px-6 bg-transparent border-2 border-[#FFFFFF] text-white ml-4 hidden md:flex">CONTACT</button>
+                    </ul>
+                </div>
+                <button id="mobileMenuBtn" class="sm:hidden font-extrabold text-4xl"><i
+                        class="fa-solid fa-bars"></i></button>
+            </div>
+        </nav>
+        <!-- hero section -->
+        <section class="relative">
+            <img class="w-full md:h-auto h-70 object-cover" src="images/hero.png" alt="">
+            <div class="inset-0 absolute flex items-center">
+                <div class="md:max-w-screen-lg w-11/12 mx-auto">
+                    <div class="md:w-full text-white">
+                        <h2 class="font-bold md:text-4xl text-3xl w-2/3">We exist since 1975 on the oil and gas
+                            industry.</h2>
+                        <button
+                            class="btn mt-8 bg-secondary py-2 px-6 rounded font-semibold hover:bg-white hover:text-secondary transition-all duration-500 hover:opacity-70">LEARN
+                            MORE</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div
+                class="max-w-screen-md mx-auto grid grid-cols-1 md:grid-cols-2 space-x-5 py-15 px-10 md:px-0 space-y-5 items-center justify-between">
+                <h2 class="text-black font-bold text-3xl">The biggest supplier on the country</h2>
+                <p class="text-base text-accent">It is a long established fact that a reader will be distracted by the
+                    readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has
+                    a more-or-less normal distribution.</p>
+            </div>
+        </section>
+        <section>
+            <div class="grid items-center justify-center gap-4 mx-auto grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+                <div class="flex mx-auto items-center justify-center">
+                    <img class="w-full h-auto object-cover" src="images/p1.png" alt="">
+                </div>
+                <div class="flex mx-auto items-center justify-center">
+                    <img class="w-full h-auto object-cover" src="images/p2.png" alt="">
+                </div>
+                <div class="flex mx-auto items-center justify-center">
+                    <img class="w-full h-auto object-cover" src="images/p3.png" alt="">
+                </div>
+                <div class="flex mx-auto items-center justify-center">
+                    <img class="w-full h-auto object-cover" src="images/p4.png" alt="">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 mt-4 space-y-5 md:space-y-0">
+                <div class="flex items-center justify-center flex-col m-10 md:m-0">
+                    <h2 class="text-3xl font-bold mb-2">Our Services</h2>
+                    <p class="w-3/4 lg:w-1/2 text-center text-accent text-base">It is a long established fact that a
+                        reader will be distracted by the readable content of a page when looking at its layout.</p>
+                </div>
+                <div class="relative">
+                    <img src="images/p5.png" alt="" class="w-full h-auto object-cover">
+                    <div class="absolute inset-0 bg-[#00000080]"></div>
+                    <div class="inset-0 absolute items-center justify-center flex text-white p-6">
+                        <h class="font-bold text-3xl">Modern natural oil and gas refineries.</h2>
+                            <button
+                                class="block mt-4 bg-secondary py-2 px-6 rounded font-semibold hover:bg-white hover:text-secondary transition-all duration-500 hover:opacity-70 text-base">
+                                LEARN MORE
+                            </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="images/p6.png" alt="">
+                    <div class="absolute inset-0 bg-[#00000080]"></div>
+                    <div class="absolute inset-0 flex justify-center items-center text-white p-6">
+                        <h class="font-bold text-3xl">Supply of national industries.</h2>
+                            <button
+                                class="block mt-4 bg-secondary py-2 px-6 rounded font-semibold hover:bg-white hover:text-secondary transition-all duration-500 hover:opacity-70 text-base">
+                                LEARN MORE
+                            </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img class="w-full h-auto object-cover" src="images/p7.png" alt="">
+                    <div class="absolute inset-0 bg-[#00000080]"></div>
+                    <div class="absolute inset-0 flex justify-center items-center text-white p-6">
+                        <h class="font-bold text-3xl">National fuel distribution and supply.</h2>
+                            <button
+                                class="block mt-4 bg-secondary py-2 px-6 rounded font-semibold hover:bg-white hover:text-secondary transition-all duration-500 hover:opacity-70 text-base">
+                                LEARN MORE
+                            </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex items-center justify-center py-20">
+            <div class="w-11/12 md:max-w-screen-md flex flex-col md:flex-row justify-center items-center bg-secondary ">
+                <div class="md:w-1/3 h-auto text-center">
+                    <h2 class="font-bold text-3xl p-4 text-white">Learn more about our company</h2>
+                </div>
+                <div class="md:w-2/3 relative">
+                    <img class="w-full h-auto object-cover" src="images/p8.png" alt="">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <button
+                            class="block mt-4 bg-white text-secondary py-2 px-6 rounded font-semibold hover:bg-secondary hover:text-white transition-all duration-500 hover:opacity-70 text-base">
+                            LEARN MORE
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex items-center justify-center pb-10">
+            <div class="w-10/12 md:max-w-screen-md grid grid-cols-2 sm:grid-cols-4 gap-20">
+                <div class="flex items-center justify-center gap-4">
+                    <img src="images/Group 1.png" alt="">
+                    <h2>PETROMAX</h2>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <img src="images/Group 2.svg" alt="">
+                    <h2>Thevron</h2>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <img src="images/Group 3.png" alt="">
+                    <h2>BARCOO</h2>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <img src="images/Group 4.png" alt="">
+                    <h2>BioSool</h2>
+                </div>
+
+            </div>
+        </section>
+        <section>
+            <div class="flex items-center justify-center py-2">
+                <div
+                    class="w-11/12 sm:max-w-screen-md flex flex-col sm:flex-row space-y-5 sm:space-y-0 justify-center items-center space-x-5">
+                    <div class="relative">
+                        <img class="w-full object-cover h-auto" src="images/p9.png" alt="">
+                        <div class="absolute inset-0 bg-[#00000090]"></div>
+                        <div
+                            class="absolute inset-0 flex flex-col items-center justify-center p-5 text-center text-white">
+                            <h3 class="text-xl sm:text-lg md:text-xl font-bold">lorem ipsum dolor sit amet consectetur
+                                adipiscing elit sed do eiusmod.</h3>
+                            <button
+                                class="block mt-4 bg-[#FFFFFF50] text-white py-2 px-6 rounded font-semibold hover:bg-secondary  transition-all duration-500 hover:opacity-70 text-base">
+                                Read more
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img class="w-full object-cover h-auto" src="images/p10.png" alt="">
+                        <div class="absolute inset-0 bg-[#00000090]"></div>
+                        <div
+                            class="absolute inset-0 flex flex-col items-center justify-center p-5 text-center text-white">
+                            <h3 class="text-xl sm:text-lg md:text-xl font-bold">lorem ipsum dolor sit amet consectetur
+                                adipiscing elit sed do eiusmod.</h3>
+                            <button
+                                class="block mt-4 bg-[#FFFFFF50] text-white py-2 px-6 rounded font-semibold hover:bg-secondary  transition-all duration-500 hover:opacity-70 text-base">
+                                Read more
+                            </button>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <img class="w-full object-cover h-auto" src="images/p11.png" alt="">
+                        <div class="absolute inset-0 bg-[#00000090]"></div>
+                        <div
+                            class="absolute inset-0 flex flex-col items-center justify-center p-5 text-center text-white">
+                            <h3 class="text-xl sm:text-lg md:text-xl font-bold">lorem ipsum dolor sit amet consectetur
+                                adipiscing elit sed do eiusmod.</h3>
+                            <button
+                                class="block mt-4 bg-[#FFFFFF50] text-white py-2 px-6 rounded font-semibold hover:bg-secondary  transition-all duration-500 hover:opacity-70 text-base">
+                                Read more
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center">
+                <p class="sm:w-11/12 sm:max-w-screen-md flex justify-end items-center gap-4 text-black font-bold">
+                    <span>MORE FROM THE BLLOG</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </p>
+            </div>
+        </section>
+        <section class="mt-10">
+            <div>
+                <img src="images/Maps.png" alt="">
+            </div>
+            <div class="bg-secondary">
+                <div class="flex mx-auto items-center justify-center py-5 md:gap-15 gap-5 px-4 sm:px-0">
+                    <h2 class="text-white text-xl md:text-2xl font-bold">Want to join as member branch in your area?
+                    </h2>
+                    <button
+                        class="py-2 px-6 bg-transparent text-sm border-2 border-[#FFFFFF] text-white ml-4">CONTACT</button>
+                </div>
+            </div>
+        </section>
+        <div class="h-1 bg-[#FFB800]"></div>
+        <section class="flex items-center justify-center bg-[#1F1F1F] text-white">
+            <div class="w-11/12 sm:max-w-screen-lg flex flex-col sm:flex-row justify-between items-start py-10 gap-10">
+                <div class="sm:w-1/3 sm:mr-10 space-y-5">
+                    <img class="w-36 h-auto" src="images/Logo.png" alt="">
+                    <p class="text-sm">
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <span>mail@yourcompany.com</span>
+                    </p>
+                    <p class="text-sm">
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <span>+896 120 5889 (Toll free)</span>
+                    </p>
+                    <p class="text-sm">
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <span>101 Baker Street, New York, USA, 12345</span>
+                    </p>
+                    <div class="space-x-4 flex justify-start">
+                        <p class="bg-secondary w-10 h-10 flex justify-center items-center rounded-full hover:bg-white hover:text-secondary">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </p>
+                        <p class="bg-secondary w-10 h-10 flex justify-center items-center rounded-full hover:bg-white hover:text-secondary">
+                            <i class="fa-brands fa-twitter"></i>
+                        </p>
+                        <p class="bg-secondary w-10 h-10 flex justify-center items-center rounded-full hover:bg-white hover:text-secondary">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </p>
+                        <p class="bg-secondary w-10 h-10 flex justify-center items-center rounded-full hover:bg-white hover:text-secondary">
+                            <i class="fa-brands fa-instagram"></i>
+                        </p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 sm:w-2/3 sm:space-y-10 space-y-10">
+                    <div class="space-y-2 text-sm">
+                        <h3 class="font-bold text-base">Company</h3>
+                        <p>Home</p>
+                        <p>About</p>
+                        <p>Services</p>
+                        <p>Gallery</p>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <h3 class="font-bold text-base">Others</h3>
+                        <p>Blog</p>
+                        <p>Contact</p>
+                        <p>Terms & Conditions</p>
+                        <p>Privacy Policy</p>
+                    </div>
+                    <div class="space-y-2">
+                        <h3 class="font-bold text-base">Certificate</h3>
+                        <div class="space-y-2">
+                            <img src="images/Cert1.png" alt="">
+                            <img src="images/Cert2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-[#282828] p-4">
+            <div class="w-11/12 sm:max-w-screen-lg text-white mx-auto">
+                <p>&copy; Copyright 2022 by AltDesain Studio – All right reserved.</p>
+            </div>
+        </footer>
+    </header>
+
+    <!-- JavaScript link -->
+    <script src="script.js"></script>
+</body>
+
+</html>
